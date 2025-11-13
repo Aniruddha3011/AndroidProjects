@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sosLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@android:color/holo_red_dark"
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/sosIcon"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@android:drawable/ic_dialog_alert"
+        android:contentDescription="SOS Alert"
+        app:tint="@android:color/white" />
+
+    <TextView
+        android:id="@+id/sosText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SOS Triggered!"
+        android:textSize="26sp"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="24dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/sosMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergency alert has been activated."
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "436788684074",
+    "firebase_url": "https://emergency-sos-da494-default-rtdb.firebaseio.com",
+    "project_id": "emergency-sos-da494",
+    "storage_bucket": "emergency-sos-da494.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436788684074:android:692fae57110afc1d5a6a53",
+        "android_client_info": {
+          "package_name": "com.example.emergencysos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436788684074-p3bd0bbkh1lrjb3i4h4bffat3ldt3ttm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.emergencysos",
+            "certificate_hash": "bcf5a3181d7ffcc55150eeab27093e20fc5de7c6"
+          }
+        },
+        {
+          "client_id": "436788684074-lkrdvigk80s8vnuj2bd1p0efjbebit5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3ClGdzqJ_VkNzjdWQTq4zGbPJ883LPQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436788684074-lkrdvigk80s8vnuj2bd1p0efjbebit5k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

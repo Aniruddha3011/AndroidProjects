@@ -1,0 +1,286 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:maxWidth="600dp">  <!-- Add max width for wide screens -->
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/baseline_arrow_back_24"
+                android:contentDescription="Back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GUIDED REPORTING"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:layout_marginStart="40dp"
+                android:textColor="#D32F2F" />
+        </LinearLayout>
+
+        <!-- Subtitle -->
+
+        <!-- Location of Incident -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="16dp"
+            android:text="Please fill out the details of the incident"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/location"
+                android:contentDescription="Location" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Location of Incident"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_bg"
+            android:hint="Enter location"
+            android:textColor="@color/black"
+            android:textColorHint="#575454"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:padding="12dp" />
+
+        <!-- Date and Time -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/baseline_calendar_month_24"
+                android:contentDescription="Calendar" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Date and Time"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/et_date"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textColorHint="#575454"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:hint="Date"
+                android:padding="12dp"
+                android:background="@drawable/edittext_bg"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/et_time"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:hint="10:00 pm"
+                android:textColorHint="#575454"
+                android:padding="12dp"
+                android:background="@drawable/edittext_bg" />
+        </LinearLayout>
+
+        <!-- Type of Incident -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/outline_assignment_24"
+                android:contentDescription="Incident Type" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Type of Incident"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/spinner_incident_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="10dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edittext_bg" />
+
+        <!-- People Involved -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/baseline_person_24"
+                android:contentDescription="People" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" People Involved"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_people_involved"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter names or description"
+            android:padding="12dp"
+            android:textColorHint="#575454"
+            android:textColor="@color/black"
+            android:background="@drawable/edittext_bg"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Upload Evidence (Optional) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/baseline_library_books_24"
+                android:contentDescription="Upload" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Upload Evidence (optional)"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/evidenceUploadLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_select_evidence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Evidence File"
+                android:drawableLeft="@drawable/baseline_cloud_upload_24"
+                android:padding="15dp"
+                android:layout_marginStart="5dp"
+                android:elevation="4dp"
+                android:background="#E0E0E0"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_selected_file"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No file selected"
+                android:textSize="14sp"
+                android:textColor="#000"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="2"
+            android:layout_marginTop="8dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:id="@+id/savedraft"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Save Draft"
+                android:textColor="@color/white"
+                android:background="@drawable/signupbutton_bg" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:id="@+id/submitReportButton"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Submit Report"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/signupbutton_bg"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFF8F9">
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Safety Check-In — Advanced"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#A70055" />
+
+        <!-- Settings card -->
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            android:background="@drawable/edittext_bg"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:padding="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/edittext_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Check-In Interval (minutes)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etInterval"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Warning before alert (seconds)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etWarning"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Emergency Contacts (comma separated phones/emails)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etContacts"
+                        android:inputType="textPostalAddress"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Custom Alert Message">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMessage"
+                        android:inputType="textMultiLine"
+                        android:minLines="3"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Buttons -->
+                <LinearLayout
+                    android:layout_marginTop="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnStart"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:visibility="gone"
+                        android:layout_weight="1"
+                        android:text="Start Check-In" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnSOS"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/signupbutton_bg"
+                        android:layout_width="match_parent"
+                        android:visibility="gone"
+                        android:textColor="@color/white"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="SOS" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Status & Controls -->
+        <LinearLayout
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="12dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Countdown"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tvCountdown"
+                        android:text="No check-in started yet."
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_marginStart="8dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnEnableNotif1"
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="140dp"
+                    android:background="@drawable/signupbutton_bg"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="🔔 Enable Notifications" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnAllowLocation"
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="140dp"
+                    android:background="@drawable/signupbutton_bg"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Allow Location" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnTestAlert"
+                    android:layout_width="140dp"
+                    android:background="@drawable/signupbutton_bg"
+                    android:textColor="@color/white"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:text="🧪 Test Alert" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Last known location & saved contacts -->
+        <TextView
+            android:id="@+id/tvLastLocation"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="Last known location: Not available" />
+
+        <TextView
+            android:id="@+id/tvSavedContacts"
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="Saved Contacts: None" />
+
+        <!-- Activity log -->
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/edittext_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Activity Log"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvLog"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No entries yet." />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Quick controls -->
+        <LinearLayout
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnQuickStart"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:background="@drawable/signupbutton_bg"
+                android:layout_height="wrap_content"
+                android:text="Start" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_height="wrap_content"
+                android:background="@drawable/signupbutton_bg"
+                android:textColor="@color/white"
+                android:id="@+id/btnQuickStop"
+                android:layout_marginStart="8dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Stop" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_height="wrap_content"
+                android:id="@+id/btnQuickCheckIn"
+                android:background="@drawable/signupbutton_bg"
+                android:textColor="@color/white"
+                android:layout_marginStart="8dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Check-In" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_height="wrap_content"
+                android:id="@+id/btnQuickSOS"
+                android:background="@drawable/signupbutton_bg"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                android:layout_marginStart="8dp"
+                android:layout_width="wrap_content"
+                android:text="SOS" />
+        </LinearLayout>
+
+        <View android:layout_height="24dp" android:layout_width="match_parent" />
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

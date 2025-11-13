@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Sathi</string>
+    <string name="facebook_app_id">1434518131212279</string>
+    <string name="facebook_client_token">672bfd21328a4eb601f4fd08b6968fff</string>
+    <string name="default_web_client_id">AIzaSyA3ClGdzqJ_VkNzjdWQTq4zGbPJ883LPQo</string>
+    <string name="login">Login</string>
+    <string name="google_map_api">AIzaSyAaOYMb_7BUpxnwIRNtYCXS_DmWs64tEqU</string>
+    <string name="accessibility_service_description">Detect volume button combo for SOS</string>
+
+
+    <string-array name="incident_types_array">
+        <item>Harassment</item>
+        <item>Physical Assault</item>
+        <item>Stalking</item>
+        <item>Verbal Abuse</item>
+        <item>Other</item>
+    </string-array>
+
+
+</resources>

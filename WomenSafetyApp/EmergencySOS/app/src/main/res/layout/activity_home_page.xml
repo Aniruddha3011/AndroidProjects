@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_gravity="center"
+    android:background="@drawable/img_bg"
+    android:padding="30dp">
+
+    <!-- Profile section -->
+    <LinearLayout
+        android:id="@+id/profile_section"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileimage"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/user"
+            android:clickable="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/circle_bg"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello,"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_marginStart="8dp"/>
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+
+    <HorizontalScrollView
+        android:id="@+id/image_scroll"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="12dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_section"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="12dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/rounded_image_border"
+                android:clipToOutline="true"
+                android:src="@drawable/firstimg"
+                android:outlineProvider="background" />
+
+
+            <ImageView
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/secondimg"
+                android:background="@drawable/rounded_image_border"
+                android:clipToOutline="true"
+                android:outlineProvider="background" />
+
+            <ImageView
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/thirdimage"
+                android:background="@drawable/rounded_image_border"
+                android:clipToOutline="true"
+                android:outlineProvider="background" />
+
+            <ImageView
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/fourthimg"
+                android:background="@drawable/rounded_image_border"
+                android:clipToOutline="true"
+                android:outlineProvider="background" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Ask AI Button -->
+    <Button
+        android:id="@+id/ai_tip_button"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="Ask AI For Safety Tips..."
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:background="@drawable/rounded_bg"
+        app:layout_constraintTop_toBottomOf="@id/image_scroll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp" />
+
+    <!-- Grid Buttons -->
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/grid_buttons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="4dp"
+        app:alignmentMode="alignMargins"
+        app:columnCount="2"
+        app:layout_constraintTop_toBottomOf="@id/ai_tip_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rowCount="2">
+
+        <!-- Emergency Contact -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_bg"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_columnWeight="1">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/round_add_ic_call_24"
+                app:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add\nEmergency\nContacts"
+                android:textColor="#F9F8FA"
+                android:id="@+id/AddEmergencyNo"
+                android:textSize="20sp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Live Location -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_bg"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_columnWeight="1">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/shield"
+                app:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Safety\nCheck-In"
+                android:textColor="#F9F8FA"
+                android:textSize="20sp"
+                android:id="@+id/safetycheckin"
+                android:paddingTop="10dp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Fake Call -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_bg"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_columnWeight="1">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/outline_phone_callback_24"
+                app:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fake Call"
+                android:textColor="#F9F8FA"
+                android:textSize="20sp"
+                android:id="@+id/Fakecall"
+                android:paddingTop="10dp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Report Incident -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_bg"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_columnWeight="1">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/outline_article_24"
+                app:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Report\nIncident"
+                android:textColor="#F9F8FA"
+                android:textSize="20sp"
+                android:id="@+id/report"
+                android:gravity="center" />
+        </LinearLayout>
+    </androidx.gridlayout.widget.GridLayout>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/rounded_bg2"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/nav_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:id="@+id/home"
+                android:src="@drawable/outline_add_home_24"
+                app:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nav_shortcut"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:id="@+id/viewaudiorecording"
+                android:src="@drawable/outline_blur_short_24"
+                app:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shortcut"
+                android:id="@+id/shortcut"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- SOS Button Floating -->
+    <FrameLayout
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/button_bg"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/sosbutton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="SOS"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            tools:ignore="DuplicateIds" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
