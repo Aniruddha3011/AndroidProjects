@@ -27,9 +27,9 @@
         android:layout_marginTop="24dp"
         android:scaleType="centerCrop"
         android:adjustViewBounds="true"
-        android:padding="25dp"
         android:src="@drawable/person2"
-        android:background="@drawable/gray" />
+        android:background="@drawable/gray"
+        android:clipToOutline="true" />
 
     <!-- Caller Name -->
     <TextView
@@ -69,10 +69,12 @@
         android:background="@drawable/green"
         android:contentDescription="Answer Call"
         android:scaleType="centerInside"
-        android:adjustViewBounds="true" />
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        android:focusable="true" />
 
     <!-- Decline Button -->
-    <ImageButton
+    <ImageView
         android:id="@+id/declineBtn"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -80,10 +82,12 @@
         android:layout_marginBottom="48dp"
         android:layout_marginEnd="40dp"
         android:layout_alignParentEnd="true"
-        android:backgroundTint="#FF3A3A"
-        android:background="@drawable/button_bg"
         android:src="@drawable/callreject"
+        android:background="@drawable/button_bg"
         android:contentDescription="Decline Call"
         android:scaleType="centerInside"
-        android:adjustViewBounds="true" />
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        android:focusable="true" />
+
 </RelativeLayout>

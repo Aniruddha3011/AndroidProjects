@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -21,7 +22,6 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
@@ -52,7 +52,10 @@
         android:usesCleartextTraffic="true"
         tools:ignore="ExtraText">
         <activity
-            android:name=".Screens.Helpline"
+            android:name=".Screens.Activitys.SafetyWidget"
+            android:exported="false" />
+        <activity
+            android:name=".Models.Helpline"
             android:exported="false"
             tools:ignore="Instantiatable" />
         <activity
@@ -62,16 +65,16 @@
             android:name=".Screens.Safety_check_in"
             android:exported="true" />
         <activity
-            android:name=".Screens.NavigationActivity"
+            android:name=".Screens.Activitys.NavigationActivity"
             android:exported="false" />
         <activity
-            android:name=".Screens.CrimeChartActivity"
+            android:name=".Screens.Activitys.CrimeChartActivity"
             android:exported="false" />
         <activity
-            android:name=".Screens.UserInfoActivity"
+            android:name=".Screens.Activitys.UserInfoActivity"
             android:exported="true" />
         <activity
-            android:name=".Screens.ShortcutActivity"
+            android:name=".Screens.Activitys.ShortcutActivity"
             android:exported="false" />
 
         <uses-library
@@ -79,70 +82,70 @@
             android:required="false" />
 
         <activity
-            android:name=".Screens.VoiceSosTrigger"
+            android:name=".UI.VoiceSosTrigger"
             android:exported="true" />
         <activity
-            android:name=".Screens.your_reports"
+            android:name=".UI.your_reports"
             android:exported="false" />
         <activity
-            android:name=".Screens.downloads"
+            android:name=".UI.downloads"
             android:exported="false" />
         <activity
-            android:name=".Screens.GuidedReportingActivity"
+            android:name=".Screens.Activitys.GuidedReportingActivity"
             android:exported="false" />
         <activity
             android:name=".Screens.ai_report"
             android:exported="false" />
         <activity
-            android:name=".Screens.ReportIncidentActivity"
+            android:name=".Screens.Activitys.ReportIncidentActivity"
             android:exported="false" />
         <activity
-            android:name=".Screens.OngoingActivity"
+            android:name=".Screens.Activitys.OngoingActivity"
             android:exported="false" />
         <activity
-            android:name=".Screens.ChatBotActivity"
+            android:name=".Screens.Activitys.ChatBotActivity"
             android:exported="false" />
         <activity
             android:name=".Screens.add_emergency_contact"
             android:exported="false" />
         <activity
-            android:name=".Screens.HomePageActivity"
-            android:launchMode="singleTop"
-            android:exported="true" />
+            android:name=".Screens.Activitys.HomePageActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
         <activity
-            android:name=".Screens.AddressActivity"
+            android:name=".Screens.Activitys.AddressActivity"
             android:exported="false" />
         <activity
-            android:name=".Screens.PersonalInfoActivity"
+            android:name=".Screens.Activitys.PersonalInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".Screens.NameActivity"
+            android:name=".Screens.Activitys.NameActivity"
             android:exported="false" />
         <activity
             android:name=".Screens.UserProfile"
             android:exported="false" />
         <activity
-            android:name=".Screens.EmergencyKeypadDialog"
+            android:name=".UI.EmergencyKeypadDialog"
             android:exported="false"
             tools:ignore="Instantiatable" />
         <activity
-            android:name=".Screens.IncomingCallActivity"
+            android:name=".Screens.Activitys.IncomingCallActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Screens.FakeCallActivity"
+            android:name=".Screens.Activitys.FakeCallActivity"
             android:exported="false" />
         <activity
-            android:name=".Screens.GoogleMapActivity"
+            android:name=".Screens.Activitys.GoogleMapActivity"
             android:exported="false" />
         <activity
-            android:name=".Screens.MainActivity"
+            android:name=".Screens.Activitys.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".Screens.ReportsActivity"
+            android:name=".Screens.Activitys.ReportsActivity"
             android:exported="true" />
         <activity
-            android:name=".Screens.SplashScreen"
+            android:name=".Screens.SplashScreen.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -150,14 +153,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
-        <meta-data
-            android:name="com.facebook.sdk.ClientToken"
-            android:value="@string/facebook_client_token" />
-
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
@@ -169,10 +164,10 @@
             android:exported="true" />
 
         <activity
-            android:name=".Screens.SignIn"
+            android:name=".Screens.Auth.SignIn"
             android:exported="true" />
         <activity
-            android:name=".Screens.SignUp"
+            android:name=".Screens.Auth.SignUp"
             android:exported="true" />
 
         <meta-data
@@ -193,7 +188,7 @@
         </provider>
 
         <receiver
-            android:name=".Screens.PowerVolumeReceiver"
+            android:name=".BroadReciever.PowerVolumeReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.SCREEN_ON" />
@@ -216,19 +211,32 @@
                 <action android:name="android.intent.action.SCREEN_OFF" />
             </intent-filter>
         </receiver>
-        
+
         <service
-            android:name=".Screens.VoiceCommandService"
+            android:name=".UI.VoiceCommandService"
             android:exported="false"
             android:foregroundServiceType="microphone" />
 
         <receiver
-            android:name=".Screens.SosBroadcastReceiver"
+            android:name=".BroadReciever.SosBroadcastReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.emergencysos.ACTION_TRIGGER_SOS" />
             </intent-filter>
         </receiver>
+        <receiver
+            android:name=".Screens.Activitys.SafetyWidget"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/safety_widget_info" />
+        </receiver>
+
 
         <service
             android:name=".PowerButton.SosService"

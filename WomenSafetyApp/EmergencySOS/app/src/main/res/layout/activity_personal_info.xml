@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:padding="16dp"
-    tools:context=".Screens.PersonalInfoActivity">
+    tools:context=".Screens.Activitys.PersonalInfoActivity">
 
     <!-- Header Layout -->
     <LinearLayout

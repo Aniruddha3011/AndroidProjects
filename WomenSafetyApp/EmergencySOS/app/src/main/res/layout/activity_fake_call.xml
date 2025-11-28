@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F5"
-    android:fillViewport="true"
-    tools:context=".Screens.FakeCallActivity">
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -120,7 +118,7 @@
             android:layout_marginBottom="24dp" />
 
         <!-- Button -->
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/buttonInitiateFakeCall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -128,12 +126,7 @@
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:padding="16dp"
-            android:background="@drawable/signupbutton_bg"
-            android:autoSizeTextType="uniform"
-            android:autoSizeMinTextSize="14sp"
-            android:autoSizeMaxTextSize="20sp"
-            android:autoSizeStepGranularity="1sp"
-            tools:ignore="UnusedAttribute" />
+            android:background="@drawable/signupbutton_bg" />
 
     </LinearLayout>
 </ScrollView>

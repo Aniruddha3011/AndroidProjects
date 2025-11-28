@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scroll"
     android:layout_width="match_parent"
@@ -23,83 +24,82 @@
             android:textStyle="bold"
             android:textColor="#A70055" />
 
-        <!-- Settings card -->
+        <!-- Settings Card -->
         <androidx.cardview.widget.CardView
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="12dp"
-            android:background="@drawable/edittext_bg"
-            app:cardElevation="6dp">
+            app:cardElevation="6dp"
+            android:background="@drawable/edittext_bg">
 
             <LinearLayout
                 android:padding="12dp"
                 android:orientation="vertical"
-                android:background="@drawable/edittext_bg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <!-- Check-In Interval -->
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Check-In Interval (minutes)">
-
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etInterval"
                         android:inputType="number"
                         android:textColor="@color/black"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <!-- Warning Before Alert -->
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_marginTop="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Warning before alert (seconds)">
-
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etWarning"
                         android:inputType="number"
                         android:textColor="@color/black"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <!-- Emergency Contacts -->
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_marginTop="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Emergency Contacts (comma separated phones/emails)">
-
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etContacts"
                         android:inputType="textPostalAddress"
                         android:textColor="@color/black"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <!-- Custom Alert Message -->
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_marginTop="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Custom Alert Message">
-
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etMessage"
                         android:inputType="textMultiLine"
                         android:minLines="3"
                         android:textColor="@color/black"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Buttons -->
+                <!-- Start / SOS Buttons -->
                 <LinearLayout
                     android:layout_marginTop="12dp"
                     android:layout_width="match_parent"
@@ -108,24 +108,23 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnStart"
-                        android:layout_height="wrap_content"
                         android:layout_width="0dp"
-                        android:visibility="gone"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Start Check-In" />
+                        android:text="Start Check-In"
+                        android:visibility="gone"/>
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnSOS"
                         android:layout_marginStart="8dp"
-                        android:background="@drawable/signupbutton_bg"
-                        android:layout_width="match_parent"
-                        android:visibility="gone"
-                        android:textColor="@color/white"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="SOS" />
+                        android:text="SOS"
+                        android:visibility="gone"
+                        android:textColor="@color/white"
+                        android:background="@drawable/signupbutton_bg"/>
                 </LinearLayout>
-
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -136,26 +135,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <!-- Countdown Card -->
             <androidx.cardview.widget.CardView
                 android:layout_weight="1"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 app:cardCornerRadius="10dp"
-                app:cardElevation="4dp"
-                android:layout_height="wrap_content">
-
+                app:cardElevation="4dp">
                 <LinearLayout
                     android:padding="12dp"
                     android:orientation="vertical"
-                    android:background="@drawable/edittext_bg"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_bg">
                     <TextView
                         android:text="Countdown"
                         android:layout_width="wrap_content"
-                        android:textColor="@color/black"
-                        android:layout_height="wrap_content" />
-
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"/>
                     <TextView
                         android:id="@+id/tvCountdown"
                         android:text="No check-in started yet."
@@ -164,10 +161,11 @@
                         android:textStyle="bold"
                         android:layout_marginTop="8dp"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <!-- Quick Action Buttons -->
             <LinearLayout
                 android:layout_marginStart="8dp"
                 android:orientation="vertical"
@@ -176,82 +174,79 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnEnableNotif1"
-                    android:layout_marginBottom="8dp"
                     android:layout_width="140dp"
-                    android:background="@drawable/signupbutton_bg"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:text="🔔 Enable Notifications" />
+                    android:layout_marginBottom="8dp"
+                    android:text="🔔 Enable Notifications"
+                    android:background="@drawable/signupbutton_bg"
+                    android:textColor="@color/white"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnAllowLocation"
-                    android:layout_marginBottom="8dp"
                     android:layout_width="140dp"
-                    android:background="@drawable/signupbutton_bg"
-                    android:textColor="@color/white"
                     android:layout_height="wrap_content"
-                    android:text="📍 Allow Location" />
+                    android:layout_marginBottom="8dp"
+                    android:text="📍 Allow Location"
+                    android:background="@drawable/signupbutton_bg"
+                    android:textColor="@color/white"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnTestAlert"
                     android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:text="🧪 Test Alert"
                     android:background="@drawable/signupbutton_bg"
                     android:textColor="@color/white"
-                    android:visibility="gone"
-                    android:layout_height="wrap_content"
-                    android:text="🧪 Test Alert" />
+                    android:visibility="gone"/>
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Last known location & saved contacts -->
+        <!-- Last Known Location & Contacts -->
         <TextView
             android:id="@+id/tvLastLocation"
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
-            android:textColor="@color/black"
             android:layout_height="wrap_content"
-            android:text="Last known location: Not available" />
+            android:text="Last known location: Not available"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tvSavedContacts"
             android:layout_marginTop="4dp"
             android:layout_width="match_parent"
-            android:textColor="@color/black"
             android:layout_height="wrap_content"
-            android:text="Saved Contacts: None" />
+            android:text="Saved Contacts: None"
+            android:textColor="@color/black"/>
 
-        <!-- Activity log -->
+        <!-- Activity Log Card -->
         <androidx.cardview.widget.CardView
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            android:layout_height="wrap_content">
-
+            app:cardElevation="4dp">
             <LinearLayout
                 android:padding="12dp"
                 android:orientation="vertical"
-                android:background="@drawable/edittext_bg"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_bg">
                 <TextView
                     android:text="Activity Log"
                     android:textStyle="bold"
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"/>
                 <TextView
                     android:id="@+id/tvLog"
                     android:layout_marginTop="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="No entries yet." />
+                    android:text="No entries yet."/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Quick controls -->
+        <!-- Quick Control Buttons -->
         <LinearLayout
             android:layout_marginTop="12dp"
             android:orientation="horizontal"
@@ -263,44 +258,45 @@
                 android:id="@+id/btnQuickStart"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:textColor="@color/white"
-                android:background="@drawable/signupbutton_bg"
                 android:layout_height="wrap_content"
-                android:text="Start" />
+                android:text="Start"
+                android:textColor="@color/white"
+                android:background="@drawable/signupbutton_bg"/>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:layout_height="wrap_content"
-                android:background="@drawable/signupbutton_bg"
-                android:textColor="@color/white"
                 android:id="@+id/btnQuickStop"
-                android:layout_marginStart="8dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:text="Stop" />
+                android:layout_height="wrap_content"
+                android:text="Stop"
+                android:textColor="@color/white"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/signupbutton_bg"/>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:layout_height="wrap_content"
                 android:id="@+id/btnQuickCheckIn"
-                android:background="@drawable/signupbutton_bg"
-                android:textColor="@color/white"
-                android:layout_marginStart="8dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:text="Check-In" />
+                android:layout_height="wrap_content"
+                android:text="Check-In"
+                android:textColor="@color/white"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/signupbutton_bg"/>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:layout_height="wrap_content"
                 android:id="@+id/btnQuickSOS"
-                android:background="@drawable/signupbutton_bg"
-                android:textColor="@color/white"
-                android:visibility="gone"
-                android:layout_marginStart="8dp"
                 android:layout_width="wrap_content"
-                android:text="SOS" />
+                android:layout_height="wrap_content"
+                android:text="SOS"
+                android:textColor="@color/white"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/signupbutton_bg"
+                android:visibility="gone"/>
         </LinearLayout>
 
-        <View android:layout_height="24dp" android:layout_width="match_parent" />
-
-
+        <!-- Bottom Spacer -->
+        <View
+            android:layout_height="24dp"
+            android:layout_width="match_parent"/>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

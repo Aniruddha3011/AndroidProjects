@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Google Map Fragment -->
     <fragment
         android:id="@+id/nav_map_fragment"
         android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -14,6 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Top Instruction Card -->
     <androidx.cardview.widget.CardView
         android:id="@+id/top_instruction_card"
         android:layout_width="0dp"
@@ -39,6 +42,7 @@
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
+    <!-- Floating Buttons (Report, Mute, Compass) -->
     <LinearLayout
         android:id="@+id/floating_controls"
         android:orientation="vertical"
@@ -66,8 +70,8 @@
             android:layout_height="56dp"
             android:src="@drawable/music"
             android:contentDescription="Mute"
-            android:layout_marginBottom="10dp"
             android:background="@drawable/edittext_bg"
+            android:layout_marginBottom="10dp"
             app:tint="#455A64" />
 
         <ImageButton
@@ -75,10 +79,11 @@
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:src="@drawable/compass"
-            android:background="@drawable/edittext_bg"
-            android:contentDescription="Compass" />
+            android:contentDescription="Compass"
+            android:background="@drawable/edittext_bg" />
     </LinearLayout>
 
+    <!-- Bottom Navigation Panel -->
     <LinearLayout
         android:id="@+id/nav_panel"
         android:layout_width="0dp"

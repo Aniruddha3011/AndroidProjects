@@ -7,7 +7,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.emergencysos.Screens.Helpline;
+import com.example.emergencysos.Models.Helpline;
 import com.example.emergencysos.R;
 
 import java.util.List;

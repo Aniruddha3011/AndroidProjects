@@ -1,53 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
     android:fillViewport="true"
     android:background="@color/white"
-    android:padding="20dp"
     tools:context=".Screens.add_emergency_contact">
 
-    <RelativeLayout
-        android:id="@+id/emergency_contact_layout"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <!-- Back Button -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="start"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:id="@+id/backarrow"
-                android:src="@drawable/outline_arrow_back_24"
-                android:adjustViewBounds="true"
-                android:scaleType="centerInside" />
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/backarrow"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/outline_arrow_back_24"
+            android:padding="5dp"
+            android:contentDescription="Back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <!-- Header -->
         <LinearLayout
             android:id="@+id/header_layout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="45dp">
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toBottomOf="@id/backarrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp">
 
             <ImageView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@drawable/ambulance"
                 android:layout_marginEnd="8dp"
-                android:adjustViewBounds="true"
-                android:scaleType="centerInside"
-                android:contentDescription="Emergency icon" />
+                android:contentDescription="Ambulance Icon" />
 
             <TextView
                 android:id="@+id/tv_title"
@@ -56,30 +51,27 @@
                 android:text="Add Emergency Contact"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:layout_marginEnd="15dp"
                 android:textColor="@color/black" />
         </LinearLayout>
 
-        <!-- Contact Card -->
+        <!-- Contact Entry Card -->
         <androidx.cardview.widget.CardView
             android:id="@+id/contact_card"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/header_layout"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="12dp"
-            android:layout_marginHorizontal="4dp"
+            android:layout_marginTop="20dp"
             app:cardElevation="6dp"
             app:cardCornerRadius="12dp"
+            app:layout_constraintTop_toBottomOf="@id/header_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             android:padding="16dp">
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/linearlayout"
-                android:padding="8dp"
-                android:background="#fff">
+                android:padding="8dp">
 
                 <!-- Name -->
                 <com.google.android.material.textfield.TextInputLayout
@@ -92,80 +84,83 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName"
-                        android:textColor="@color/black"
                         android:drawableStart="@drawable/person3"
                         android:drawablePadding="10dp"
-                        android:padding="12dp" />
+                        android:padding="12dp"
+                        android:textColor="@color/black" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Phone -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Phone Number"
-                    android:layout_marginTop="12dp">
+                    android:layout_marginTop="12dp"
+                    android:hint="Phone Number">
 
                     <EditText
                         android:id="@+id/et_contact_phone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="phone"
-                        android:textColor="@color/black"
                         android:drawableStart="@drawable/call"
                         android:drawablePadding="10dp"
-                        android:padding="12dp" />
+                        android:padding="12dp"
+                        android:textColor="@color/black" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Relation -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Relation (e.g. Mother, Friend)"
-                    android:layout_marginTop="12dp">
+                    android:layout_marginTop="12dp"
+                    android:hint="Relation (e.g. Mother, Friend)">
 
                     <EditText
                         android:id="@+id/et_contact_relation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
-                        android:textColor="@color/black"
                         android:drawableStart="@drawable/chain"
                         android:drawablePadding="10dp"
-                        android:padding="12dp" />
+                        android:padding="12dp"
+                        android:textColor="@color/black" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Pick from contacts -->
+                <!-- Pick from Contacts Button -->
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_pick_contact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="📞  Pick from Contacts"
                     android:layout_marginTop="16dp"
+                    android:text="📞  Pick from Contacts"
                     android:background="@drawable/signupbutton_bg"
                     android:textColor="@color/white" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Recycler -->
+        <!-- RecyclerView -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_contacts"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/contact_card"
-            android:layout_marginHorizontal="4dp"
-            android:layout_marginBottom="12dp"
-            android:layout_marginTop="4dp" />
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/contact_card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Save button -->
+        <!-- Save Button -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_save_contact"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Save Contact"
-            android:layout_below="@id/recycler_contacts"
-            android:layout_marginBottom="24dp"
-            android:layout_marginHorizontal="4dp"
             android:background="@drawable/signupbutton_bg"
-            android:textColor="@android:color/white" />
-    </RelativeLayout>
+            android:textColor="@android:color/white"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/recycler_contacts"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

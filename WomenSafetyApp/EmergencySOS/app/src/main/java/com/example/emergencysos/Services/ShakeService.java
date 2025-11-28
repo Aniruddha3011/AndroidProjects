@@ -17,7 +17,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
-import com.example.emergencysos.Screens.HomePageActivity;
+import com.example.emergencysos.Screens.Activitys.HomePageActivity;
 
 public class ShakeService extends Service implements SensorEventListener {
 

@@ -30,6 +30,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.example.emergencysos.R;
+import com.example.emergencysos.Services.CheckInService;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.material.textfield.TextInputEditText;
@@ -64,6 +65,7 @@ public class Safety_check_in extends AppCompatActivity {
     private String currentCallNumber = null;
     private Handler callTimeoutHandler = new Handler();
     private static final int CALL_TIMEOUT_MS = 30000; // 30 seconds timeout for call answer
+    String trigger = getIntent().getStringExtra("trigger");
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @SuppressLint("MissingInflatedId")
@@ -98,6 +100,23 @@ public class Safety_check_in extends AppCompatActivity {
         // Init TelephonyManager and listener
         telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         callStateListener = new CallStateListener();
+
+        if (trigger != null) {
+            switch (trigger) {
+                case "sos":
+                    triggerSOS();
+                    break;
+                case "checkin":
+                    manualCheckIn();
+                    break;
+                case "start":
+                    onStartCheckIn(true);
+                    break;
+                case "stop":
+                    stopCheckInService();
+                    break;
+            }
+        }
 
         loadSaved();
 

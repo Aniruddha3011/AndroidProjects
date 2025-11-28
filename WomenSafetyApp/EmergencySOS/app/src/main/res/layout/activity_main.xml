@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".Screens.MainActivity"
+    tools:context=".Screens.Activitys.MainActivity"
     android:padding="16dp">
 
     <androidx.appcompat.widget.AppCompatButton

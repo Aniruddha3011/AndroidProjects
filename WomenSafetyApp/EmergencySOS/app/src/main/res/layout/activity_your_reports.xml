@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/tools"
     android:background="#FDEAFF"
-    app:context=".Screens.ReportsActivity"
+    app:context=".Screens.Activitys.ReportsActivity"
     app:ignore="NamespaceTypo">
 
     <ScrollView

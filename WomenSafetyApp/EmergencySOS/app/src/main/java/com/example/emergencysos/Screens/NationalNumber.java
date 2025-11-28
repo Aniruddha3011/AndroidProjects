@@ -13,6 +13,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.emergencysos.Adapters.NationalNumberAdapter;
+import com.example.emergencysos.Models.Helpline;
 import com.example.emergencysos.R;
 
 import java.util.ArrayList;

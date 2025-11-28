@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:background="@drawable/bg_signuppage"
-    tools:context=".Screens.SignIn">
+    tools:context=".Screens.Auth.SignIn">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,6 +19,7 @@
         android:paddingTop="60dp"
         android:paddingBottom="40dp">
 
+        <!-- Login Card -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,10 +32,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@drawable/signuppage_bg"
                 android:padding="24dp"
-                android:gravity="center_horizontal">
+                android:gravity="center_horizontal"
+                android:background="@drawable/signuppage_bg">
 
+                <!-- Login Title -->
                 <TextView
                     android:id="@+id/loginText"
                     android:layout_width="match_parent"
@@ -45,6 +47,7 @@
                     android:textSize="36sp"
                     android:textStyle="bold" />
 
+                <!-- Email Field -->
                 <EditText
                     android:id="@+id/Email"
                     android:layout_width="match_parent"
@@ -57,9 +60,9 @@
                     android:textColorHint="#6D6161"
                     android:padding="8dp"
                     android:inputType="textEmailAddress"
-                    android:textColor="@color/black"
-                    android:textColorHighlight="@color/cardview_dark_background" />
+                    android:textColor="@color/black" />
 
+                <!-- Password Field -->
                 <EditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
@@ -68,13 +71,13 @@
                     android:background="@drawable/edittext_bg"
                     android:drawableLeft="@drawable/padlock"
                     android:drawablePadding="17dp"
-                    android:textColorHint="#6D6161"
                     android:hint="Password"
                     android:inputType="textPassword"
+                    android:textColorHint="#6D6161"
                     android:padding="8dp"
-                    android:textColor="@color/black"
-                    android:textColorHighlight="@color/cardview_dark_background" />
+                    android:textColor="@color/black" />
 
+                <!-- Login Button -->
                 <Button
                     android:id="@+id/loginButton"
                     android:layout_width="match_parent"
@@ -85,9 +88,11 @@
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     app:cornerRadius="20dp" />
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- Sign Up Link -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -99,9 +104,6 @@
                 android:id="@+id/donthacc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:autoLink="none"
-                android:clickable="true"
-                android:focusable="true"
                 android:padding="8dp"
                 android:text="Don't have account?"
                 android:textAlignment="center"
@@ -112,9 +114,6 @@
                 android:id="@+id/Signup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:autoLink="none"
-                android:clickable="true"
-                android:focusable="true"
                 android:text="Sign Up"
                 android:textAlignment="center"
                 android:textColor="#A62857"
@@ -122,6 +121,7 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
+        <!-- Divider -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -130,7 +130,6 @@
             android:gravity="center_vertical">
 
             <View
-                android:id="@+id/view5"
                 android:layout_width="0dp"
                 android:layout_height="2dp"
                 android:layout_weight="1"
@@ -138,16 +137,14 @@
                 android:background="@color/design_default_color_primary_dark" />
 
             <TextView
-                android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:text="Or With"
                 android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:gravity="center" />
 
             <View
-                android:id="@+id/view7"
                 android:layout_width="0dp"
                 android:layout_height="2dp"
                 android:layout_weight="1"
@@ -155,6 +152,7 @@
                 android:background="@color/design_default_color_primary_dark" />
         </LinearLayout>
 
+        <!-- Social Login Buttons -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -176,5 +174,6 @@
                 android:layout_margin="5dp"
                 app:srcCompat="@drawable/facebook2" />
         </LinearLayout>
+
     </LinearLayout>
 </ScrollView>

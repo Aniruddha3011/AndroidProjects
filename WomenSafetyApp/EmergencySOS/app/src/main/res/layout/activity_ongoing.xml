@@ -6,9 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1A1919"
-    tools:context=".Screens.OngoingActivity">
-
-
+    tools:context=".Screens.Activitys.OngoingActivity">
 
     <!-- Caller Name -->
     <TextView
@@ -22,6 +20,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="90dp" />
 
+    <!-- Caller Number -->
     <TextView
         android:id="@+id/callerNumberText"
         android:layout_width="wrap_content"
@@ -32,7 +31,6 @@
         android:layout_below="@id/callerNameText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="4dp" />
-
 
     <!-- Call Timer -->
     <TextView
@@ -46,7 +44,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="4dp" />
 
-    <!-- Call Options Row -->
+    <!-- First Row of Call Controls -->
     <LinearLayout
         android:id="@+id/callOptions"
         android:layout_width="match_parent"
@@ -136,6 +134,7 @@
         </LinearLayout>
     </LinearLayout>
 
+    <!-- Second Row of Call Controls -->
     <LinearLayout
         android:id="@+id/secondRow"
         android:layout_width="match_parent"
@@ -234,4 +233,5 @@
         android:src="@drawable/baseline_call_end_24"
         android:scaleType="centerInside"
         app:tint="#FFFFFF" />
+
 </RelativeLayout>
